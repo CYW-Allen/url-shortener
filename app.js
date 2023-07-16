@@ -18,11 +18,15 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   let randKey;
 
+  if (!examUrl(req.body.url)) {
+    res.send('Invalid request');
+  }
   if (reDirTab[req.body.url] === undefined) {
     randKey = geneRandStr();
     reDirTab[randKey] = req.body.url;
     reDirTab[req.body.url] = randKey;
   } else {
+    // Inputting same url will get same result
     randKey = reDirTab[req.body.url];
   }
   res.send(`short url: ${req.protocol}://${req.hostname}:${PORT}/${randKey}`);
@@ -35,6 +39,15 @@ app.get('/:randKey', (req, res) => {
 app.listen(PORT, () => {
   console.log(`The server is running on http://localhost:${PORT}`);
 });
+
+function examUrl(input) {
+  try {
+    new URL(input);
+    return true;
+  } catch {
+    return false;
+  }
+}
 
 function getRandInt(rng) {
   return Math.floor(Math.random() * rng);
