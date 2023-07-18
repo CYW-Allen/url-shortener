@@ -1,0 +1,32 @@
+* {
+  font-family: Microsoft JhengHei;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid blue;
+}
+
+.inputArea,
+.resultField {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.inputArea input {
+  background-color: rgb(235, 235, 235);
+  font-weight: 600;
+}
+
+.inputArea button {
+  width: 50%;
+  margin-top: 20px;
+}

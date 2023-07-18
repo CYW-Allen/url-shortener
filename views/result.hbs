@@ -1,0 +1,18 @@
+<div class="resultField">
+  <div class="fs-1">Success! Please use this link:</div>
+  <a class="my-2" href="{{shortenUrl}}" target="_blank">{{shortenUrl}}</a>
+  <div>
+    <button type="button" class="btn btn-primary" onclick="copyUrl('{{shortenUrl}}')">Copy</button>
+    <button type="button" class="btn btn-info" onclick="backToFrontPage()"><i class="fas fa-home"></i></button>
+  </div>
+</div>
+
+<script>
+  function copyUrl(url) {
+    navigator.clipboard.writeText(url);
+    alert('網址已複製');
+  }
+  function backToFrontPage() {
+    window.location.href = '/';
+  }
+</script>
