@@ -9,11 +9,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 5px solid blue;
 }
 
 .inputArea,
-.resultField {
+.resultField,
+.errField {
   width: 30%;
   display: flex;
   flex-direction: column;

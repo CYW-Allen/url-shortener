@@ -4,13 +4,11 @@
 </form>
 
 <script>
-  const errMsg = {{{ errMsg }}};
-  if (errMsg) alert(errMsg);
-
   function submitReq() {
     const inputUrl = document.getElementById('url').value;
+    // Alert for sending empty url
     if (inputUrl === '') {
-      alert('請輸入網址');
+      alert('Please enter one url for shortening!');
     } else {
       document.getElementById('urlForm').submit();
     }

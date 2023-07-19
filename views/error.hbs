@@ -1,0 +1,15 @@
+<div class="errField">
+  <h3 class="text-danger fw-bold">
+    <i class="fas fa-exclamation-triangle"></i>
+    <span class="ms-3">{{msg}}</span>
+  </h3>
+  <button type="button" class="btn btn-info" onclick="backToFrontPage()" title="frontpage">
+    <i class="fas fa-home"></i>
+  </button>
+</div>
+
+<script>
+  function backToFrontPage() {
+    window.location.href = '/';
+  }
+</script>
