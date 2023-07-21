@@ -9,8 +9,15 @@
 
 <script>
   function copyUrl(url) {
-    navigator.clipboard.writeText(url);
-    alert('This url is copied to the clipboard');
+    navigator.clipboard.writeText(url)
+      .then(() => {
+        alert('This url is copied to the clipboard');
+      })
+      .catch((e) => {
+        alert('Fail to copy the url to the clipboard');
+        console.error(e);
+      });
+    
   }
   function backToFrontPage() {
     window.location.href = '/';
